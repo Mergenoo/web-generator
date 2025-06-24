@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce Store Generator</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .container {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        max-width: 600px;
+        width: 100%;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .header h1 {
+        color: #333;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .header p {
+        color: #666;
+        font-size: 1.1rem;
+      }
+
+      .form-group {
+        margin-bottom: 25px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 15px;
+        border: 2px solid #e1e5e9;
+        border-radius: 10px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        background: #f8f9fa;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        border-color: #667eea;
+        background: white;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      .btn {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+      }
+
+      .btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .loading {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .spinner {
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #667eea;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 10px;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .result {
+        display: none;
+        margin-top: 20px;
+        padding: 20px;
+        background: #f8f9fa;
+        border-radius: 10px;
+        border-left: 4px solid #667eea;
+      }
+
+      .result h3 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .result a {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .result a:hover {
+        text-decoration: underline;
+      }
+
+      .error {
+        background: #fee;
+        border-left-color: #e74c3c;
+        color: #c0392b;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 20px;
+        }
+
+        .header h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1><i class="fas fa-store"></i> Store Generator</h1>
+        <p>Create your perfect e-commerce store with AI</p>
+      </div>
+
+      <form id="storeForm">
+        <div class="form-group">
+          <label for="brandName">Brand Name *</label>
+          <input
+            type="text"
+            id="brandName"
+            name="brand_name"
+            required
+            placeholder="Enter your brand name"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="productCategory">Product Category *</label>
+          <select id="productCategory" name="product_category" required>
+            <option value="">Select a category</option>
+            <option value="Fashion & Apparel">Fashion & Apparel</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Home & Garden">Home & Garden</option>
+            <option value="Beauty & Personal Care">
+              Beauty & Personal Care
+            </option>
+            <option value="Sports & Outdoors">Sports & Outdoors</option>
+            <option value="Books & Media">Books & Media</option>
+            <option value="Food & Beverages">Food & Beverages</option>
+            <option value="Toys & Games">Toys & Games</option>
+            <option value="Health & Wellness">Health & Wellness</option>
+            <option value="Automotive">Automotive</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="targetAudience">Target Audience *</label>
+          <select id="targetAudience" name="target_audience" required>
+            <option value="">Select target audience</option>
+            <option value="Young Professionals (25-35)">
+              Young Professionals (25-35)
+            </option>
+            <option value="Millennials (18-34)">Millennials (18-34)</option>
+            <option value="Gen Z (16-24)">Gen Z (16-24)</option>
+            <option value="Parents with Children">Parents with Children</option>
+            <option value="Seniors (55+)">Seniors (55+)</option>
+            <option value="Fitness Enthusiasts">Fitness Enthusiasts</option>
+            <option value="Tech Savvy Users">Tech Savvy Users</option>
+            <option value="Luxury Consumers">Luxury Consumers</option>
+            <option value="Budget Conscious">Budget Conscious</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="priceRange">Price Range *</label>
+          <select id="priceRange" name="price_range" required>
+            <option value="">Select price range</option>
+            <option value="Budget ($10-$50)">Budget ($10-$50)</option>
+            <option value="Mid-range ($50-$200)">Mid-range ($50-$200)</option>
+            <option value="Premium ($200-$500)">Premium ($200-$500)</option>
+            <option value="Luxury ($500+)">Luxury ($500+)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="additionalRequirements"
+            >Additional Requirements (Optional)</label
+          >
+          <textarea
+            id="additionalRequirements"
+            name="additional_requirements"
+            placeholder="Any specific features, design preferences, or special requirements..."
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn" id="generateBtn">
+          <i class="fas fa-magic"></i>
+          Generate Store
+        </button>
+      </form>
+
+      <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p>Generating your store with AI...</p>
+      </div>
+
+      <div class="result" id="result"></div>
+    </div>
+
+    <script>
+      document
+        .getElementById("storeForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const form = e.target;
+          const generateBtn = document.getElementById("generateBtn");
+          const loading = document.getElementById("loading");
+          const result = document.getElementById("result");
+
+          // Show loading
+          generateBtn.disabled = true;
+          loading.style.display = "block";
+          result.style.display = "none";
+
+          // Collect form data
+          const formData = new FormData(form);
+          const data = {
+            brand_name: formData.get("brand_name"),
+            product_category: formData.get("product_category"),
+            target_audience: formData.get("target_audience"),
+            price_range: formData.get("price_range"),
+            additional_requirements: formData.get("additional_requirements"),
+          };
+
+          try {
+            const response = await fetch("/generate-store", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(data),
+            });
+
+            const resultData = await response.json();
+
+            if (response.ok) {
+              result.innerHTML = `
+                        <h3><i class="fas fa-check-circle"></i> Store Generated Successfully!</h3>
+                        <p>Your ${data.brand_name} store has been created.</p>
+                        <p><a href="${resultData.preview_url}" target="_blank">View Store Preview →</a></p>
+                    `;
+              result.className = "result";
+            } else {
+              result.innerHTML = `
+                        <h3><i class="fas fa-exclamation-triangle"></i> Error</h3>
+                        <p>${
+                          resultData.detail || "Failed to generate store"
+                        }</p>
+                    `;
+              result.className = "result error";
+            }
+          } catch (error) {
+            result.innerHTML = `
+                    <h3><i class="fas fa-exclamation-triangle"></i> Error</h3>
+                    <p>Network error: ${error.message}</p>
+                `;
+            result.className = "result error";
+          } finally {
+            loading.style.display = "none";
+            result.style.display = "block";
+            generateBtn.disabled = false;
+          }
+        });
+    </script>
+  </body>
+</html>

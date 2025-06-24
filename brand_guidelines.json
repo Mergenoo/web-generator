@@ -1,0 +1,87 @@
+{
+  "BoggBagBrandGuidelines": {
+    "BrandEssence": {
+      "Mission": "We make life easier to carry—and a lot more colorful.",
+      "Promise": "The indestructible, washable bag that won't tip, leak, or let you down.",
+      "Personality": "Your most reliable friend who happens to be impossibly upbeat."
+    },
+    "VoiceAndTone": {
+      "BrandVoiceAttributes": {
+        "Encouraging": "Like a sideline cheerleader who believes you've got this",
+        "Playful": "Life's messy—might as well have fun with it",
+        "Authentic": "Real talk from real people who get it"
+      },
+      "ToneGuidelines": {
+        "InternalCommunications": "Family dinner conversation—warm, direct, supportive",
+        "CustomerFacing": "Best friend energy—enthusiastic without being exhausting",
+        "CrisisOrIssues": "Steady hand on the wheel—calm, solution-focused, human"
+      },
+      "WritingRules": [
+        "Lead with the benefit, follow with the feature",
+        "Use active voice (e.g., 'Bogg holds it all' not 'Everything is held by Bogg')",
+        "Embrace exclamation points sparingly—let enthusiasm show through word choice",
+        "Never use: 'revolutionary,' 'luxury,' 'exclusive' (we're for everyone)"
+      ]
+    },
+    "VisualIdentity": {
+      "LogoUsage": {
+        "Primary": "Full wordmark for hero placements",
+        "Secondary": "'B' icon for small applications (social avatars, bag charms)",
+        "ClearSpace": "Minimum padding equals the height of the 'o' in Bogg",
+        "MinimumSize": {
+          "Print": "0.5 inch height",
+          "Digital": "80px"
+        }
+      },
+      "ColorPalette": {
+        "PrimaryColors": {
+          "BoggBlue": {
+            "ColorCode": "#0099CC",
+            "Usage": "Our signature—use for primary CTAs and headers"
+          },
+          "BeachSand": {
+            "ColorCode": "#F5E6D3",
+            "Usage": "Clean backdrop for product photography"
+          },
+          "SunshineYellow": {
+            "ColorCode": "#FFD700",
+            "Usage": "Energy accent—use sparingly for highlights"
+          }
+        },
+        "SecondaryRainbow": "Each seasonal colorway represents possibility—display in groups to show variety, never alone"
+      },
+      "Typography": {
+        "Headlines": "Custom Bogg Sans Bold—playful with variable widths",
+        "BodyCopy": "Inter Regular—clean, approachable, readable at all sizes",
+        "Hierarchy": "Size creates emphasis, not weight changes"
+      },
+      "PhotographyAndImagery": {
+        "StyleDirection": [
+          "Capture moments, not poses—real people in real life",
+          "Natural lighting preferred—we're an outdoor brand at heart",
+          "Show the mess and the solution in one frame",
+          "Include diverse families, activities, and environments"
+        ],
+        "CompositionRules": [
+          "Bags should appear functional, not decorative—always show them in use",
+          "Lead with color—our rainbow tells our story",
+          "Environmental context matters—beach, ballfield, boat deck"
+        ]
+      }
+    },
+    "BrandApplication": {
+      "ProductNaming": "Follow the family model: Original Bogg (parent), Baby Bogg (everyday), Bitty Bogg (essentials)",
+      "PartnershipGuidelines": {
+        "ExclusiveColorways": "Create collector moments",
+        "VoiceConsistency": "Maintain our voice even in partner channels",
+        "CommunityFocus": "Community comes first—donations and giving back are core"
+      },
+      "DigitalPresence": {
+        "SocialMedia": "Social shows personalization—highlight customer creativity",
+        "Website": "Website emphasizes problem-solving—tip-proof, washable, won't collapse",
+        "Email": "Email speaks friend-to-friend—helpful, never salesy"
+      }
+    },
+    "TheBoggStandard": "Every touchpoint should feel like that friend who shows up with exactly what you need, makes you laugh when things get chaotic, and reminds you that life's adventures are better when you're prepared—and colorful. Because nothing beats the feeling of 'I've got this.'"
+  }
+}
